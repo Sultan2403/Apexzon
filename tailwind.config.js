@@ -22,7 +22,7 @@ export default {
         body: ["Inter", "system-ui", "sans-serif"],
       },
       fontSize: {
-        display: ["clamp(3.5rem, 8.1vw, 7.1rem)", { lineHeight: "0.95", letterSpacing: "-0.035em", fontWeight: "900" }],
+        display: ["clamp(3rem, 6.8vw, 5.9rem)", { lineHeight: "0.98", letterSpacing: "-0.045em", fontWeight: "700" }],
         headline: ["clamp(2.2rem, 4vw, 4.05rem)", { lineHeight: "1.03", letterSpacing: "-0.035em", fontWeight: "800" }],
         eyebrow: ["0.75rem", { lineHeight: "1rem", letterSpacing: "0.34em", fontWeight: "800" }],
         micro: ["0.68rem", { lineHeight: "1rem", letterSpacing: "0.16em", fontWeight: "800" }],
