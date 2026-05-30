@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-w-80 overflow-x-hidden bg-background font-body text-on-surface antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display text-primary;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply mx-auto w-full max-w-container px-gutter;
+  }
+
+  .eyebrow {
+    @apply mb-6 block font-body text-eyebrow uppercase text-gold;
+  }
+
+  .btn {
+    @apply inline-flex min-h-10 items-center justify-center px-6 py-3 text-center font-body text-[0.72rem] font-extrabold uppercase tracking-[0.16em] no-underline transition duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-gold text-background hover:-translate-y-0.5 hover:brightness-110;
+  }
+
+  .btn-secondary {
+    @apply border border-gold bg-white/[0.02] text-white hover:bg-gold/10;
+  }
+
+  .glass-card {
+    @apply border border-outline bg-surface-container/80 shadow-card backdrop-blur;
+  }
+
+  .corner-frame::before,
+  .corner-frame::after {
+    content: "";
+    @apply absolute h-11 w-11 border-gold;
+  }
+
+  .corner-frame::before {
+    @apply -left-4 -top-4 border-l-2 border-t-2;
+  }
+
+  .corner-frame::after {
+    @apply -bottom-4 -right-4 border-b-2 border-r-2;
+  }
+
+  .process-number {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.24);
+    @apply font-display text-[3.45rem] font-black leading-none text-transparent;
+  }
+}
