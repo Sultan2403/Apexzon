@@ -1,6 +1,8 @@
+import { SectionReveal } from "../SectionReveal";
+
 export function DominanceSection() {
   return (
-    <section className="bg-surface py-section">
+    <SectionReveal className="bg-surface py-section">
       <div className="section-container grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-32">
         <div className="corner-frame relative min-h-[420px] overflow-hidden bg-office-lines bg-[length:44px_100%,100%_100%]" aria-label="Luxury office meeting room">
           <div className="absolute left-[14%] top-[8%] h-3/4 w-[72%] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
@@ -30,6 +32,6 @@ export function DominanceSection() {
           </div>
         </div>
       </div>
-    </section>
+    </SectionReveal>
   );
 }

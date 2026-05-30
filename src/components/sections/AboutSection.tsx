@@ -1,8 +1,9 @@
 import { FaUsers } from "react-icons/fa6";
+import { SectionReveal } from "../SectionReveal";
 
 export function AboutSection() {
   return (
-    <section className="bg-surface-low py-section" id="about">
+    <SectionReveal className="bg-surface-low py-section" id="about">
       <div className="section-container grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-32">
         <div>
           <p className="eyebrow">About Us</p>
@@ -17,6 +18,6 @@ export function AboutSection() {
           <FaUsers className="h-24 w-24 text-gold/15" />
         </div>
       </div>
-    </section>
+    </SectionReveal>
   );
 }
