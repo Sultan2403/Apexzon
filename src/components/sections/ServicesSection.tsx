@@ -1,9 +1,10 @@
 import { SectionHeading } from "../SectionHeading";
+import { SectionReveal } from "../SectionReveal";
 import { services } from "../../data";
 
 export function ServicesSection() {
   return (
-    <section className="bg-surface-low py-section" id="services">
+    <SectionReveal className="bg-surface-low py-section" id="services">
       <div className="section-container">
         <SectionHeading title="Our Core Specialties" underline />
         <div className="grid grid-cols-2 gap-x-8 gap-y-16 md:grid-cols-4 md:gap-y-24">
@@ -21,6 +22,6 @@ export function ServicesSection() {
           })}
         </div>
       </div>
-    </section>
+    </SectionReveal>
   );
 }

@@ -1,4 +1,5 @@
 import { FaBullseye, FaEye } from "react-icons/fa6";
+import { SectionReveal } from "../SectionReveal";
 
 const cards = [
   {
@@ -15,7 +16,7 @@ const cards = [
 
 export function VisionMissionSection() {
   return (
-    <section className="bg-surface-lowest py-[clamp(4.5rem,8vw,7.5rem)]">
+    <SectionReveal className="bg-surface-lowest py-[clamp(4.5rem,8vw,7.5rem)]">
       <div className="section-container grid gap-6 md:grid-cols-2">
         {cards.map((card) => {
           const Icon = card.icon;
@@ -31,6 +32,6 @@ export function VisionMissionSection() {
           );
         })}
       </div>
-    </section>
+    </SectionReveal>
   );
 }

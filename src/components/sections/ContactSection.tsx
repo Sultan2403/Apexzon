@@ -1,4 +1,5 @@
 import { FaAt, FaEnvelope, FaGlobe, FaLink, FaLocationDot, FaShareNodes } from "react-icons/fa6";
+import { SectionReveal } from "../SectionReveal";
 
 const socialIcons = [
   { icon: FaLink, label: "link" },
@@ -9,7 +10,7 @@ const socialIcons = [
 
 export function ContactSection() {
   return (
-    <section className="bg-surface-lowest py-section" id="contact">
+    <SectionReveal className="bg-surface-lowest py-section" id="contact">
       <div className="section-container grid items-start gap-16 lg:grid-cols-[1fr_0.85fr] lg:gap-28">
         <div>
           <h2 className="mb-6 text-headline">Let&apos;s Talk</h2>
@@ -64,6 +65,6 @@ export function ContactSection() {
           </button>
         </form>
       </div>
-    </section>
+    </SectionReveal>
   );
 }
