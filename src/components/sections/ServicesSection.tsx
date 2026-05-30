@@ -11,9 +11,11 @@ export function ServicesSection() {
             const Icon = service.icon;
 
             return (
-              <article className="group flex flex-col items-center gap-6 text-center" key={service.label}>
-                <Icon className="h-9 w-9 text-zinc-300 opacity-80 transition group-hover:-translate-y-1 group-hover:text-gold group-hover:opacity-100" aria-hidden="true" />
-                <h3 className="font-body text-micro uppercase text-zinc-300 transition group-hover:text-gold">{service.label}</h3>
+              <article className="premium-hover-card group flex flex-col items-center gap-6 p-6 text-center" key={service.label}>
+                <span className="premium-icon-shell">
+                  <Icon className="h-9 w-9 text-zinc-300 opacity-80 transition duration-500 group-hover:-translate-y-1 group-hover:scale-110 group-hover:text-gold group-hover:opacity-100" aria-hidden="true" />
+                </span>
+                <h3 className="font-body text-micro uppercase text-zinc-300 transition duration-500 group-hover:text-gold">{service.label}</h3>
               </article>
             );
           })}

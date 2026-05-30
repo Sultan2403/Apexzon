@@ -12,14 +12,14 @@ export function ProcessSection() {
 
             return (
               <article
-                className={`grid min-h-72 grid-cols-[auto_1fr] gap-4 border border-outline bg-background/50 p-8 transition hover:border-l-gold max-sm:grid-cols-1 ${
+                className={`process-card group grid min-h-72 grid-cols-[auto_1fr] gap-4 border border-outline bg-background/50 p-8 max-sm:grid-cols-1 ${
                   step.featured ? "border-b-4 border-l-4 border-b-gold border-l-gold" : ""
                 }`}
                 key={step.number}
               >
                 <span className="process-number">{step.number}</span>
                 <div>
-                  <Icon className="h-10 w-10 text-gold" aria-hidden="true" />
+                  <Icon className="h-10 w-10 text-gold transition duration-500 group-hover:scale-110 group-hover:rotate-3" aria-hidden="true" />
                   <h3 className="my-4 text-2xl font-bold">{step.title}</h3>
                   <p className="text-sm leading-7 text-on-surface-variant">{step.text}</p>
                 </div>

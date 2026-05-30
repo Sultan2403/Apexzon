@@ -64,3 +64,265 @@
     @apply font-display text-[3.45rem] font-black leading-none text-transparent;
   }
 }
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .premium-gradient {
+    background: linear-gradient(100deg, #f8e7a1 0%, #d4af37 38%, #fff5c7 54%, #b88918 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 10px 28px rgba(212, 175, 55, 0.16));
+  }
+
+  .animate-fade-up {
+    animation: fade-up 760ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@layer components {
+  .hero-copy h1 {
+    animation: fade-up 900ms cubic-bezier(0.16, 1, 0.3, 1) 90ms both;
+  }
+
+  .hero-copy h1 span:first-child {
+    color: rgba(243, 240, 239, 0.86);
+    font-weight: 650;
+  }
+
+  .hero-orb {
+    @apply absolute rounded-full blur-3xl;
+    animation: orb-drift 12s ease-in-out infinite alternate;
+  }
+
+  .hero-orb-gold {
+    @apply right-[9%] top-[18%] h-72 w-72 bg-gold/20;
+  }
+
+  .hero-orb-ivory {
+    @apply bottom-[14%] right-[30%] h-52 w-52 bg-white/10;
+    animation-delay: -4s;
+  }
+
+  .hero-ring {
+    animation: ring-breathe 6s ease-in-out infinite;
+  }
+
+  .hero-monolith {
+    transform-origin: center;
+    animation: monolith-float 8s ease-in-out infinite;
+  }
+
+  .scroll-cue {
+    animation: cue-bob 1.8s ease-in-out infinite;
+  }
+
+  .glass-card,
+  .corner-frame,
+  .group,
+  form[aria-label="Contact inquiry form"] {
+    @apply transition duration-500 ease-out;
+  }
+
+  .glass-card:hover,
+  form[aria-label="Contact inquiry form"]:hover {
+    @apply -translate-y-1 border-gold/35 shadow-glow;
+  }
+
+  .corner-frame:hover {
+    @apply -translate-y-1 shadow-glow;
+  }
+
+  .btn {
+    @apply relative overflow-hidden;
+  }
+
+  .btn::after {
+    content: "";
+    @apply pointer-events-none absolute inset-y-0 -left-1/2 w-1/3 -skew-x-12 bg-white/30 opacity-0;
+    transition: transform 650ms ease, opacity 650ms ease;
+  }
+
+  .btn:hover::after {
+    @apply opacity-100;
+    transform: translateX(420%);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes orb-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(0.96);
+  }
+  to {
+    transform: translate3d(-28px, 18px, 0) scale(1.08);
+  }
+}
+
+@keyframes ring-breathe {
+  0%,
+  100% {
+    opacity: 0.72;
+    box-shadow: 0 0 0 rgba(212, 175, 55, 0);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 50px rgba(212, 175, 55, 0.08);
+  }
+}
+
+@keyframes monolith-float {
+  0%,
+  100% {
+    transform: rotate(32deg) skewX(-11deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(32deg) skewX(-11deg) translate3d(-10px, -16px, 0);
+  }
+}
+
+@keyframes cue-bob {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+}
+
+@layer components {
+  .brand-link {
+    @apply transition duration-300 hover:text-gold;
+    text-shadow: 0 0 0 rgba(212, 175, 55, 0);
+  }
+
+  .brand-link:hover {
+    text-shadow: 0 0 24px rgba(212, 175, 55, 0.28);
+  }
+
+  .nav-link {
+    @apply relative pb-2 transition duration-300 hover:text-white;
+  }
+
+  .nav-link::after {
+    content: "";
+    @apply absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-gold transition duration-300 ease-out;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.is-active::after {
+    @apply scale-x-100;
+  }
+
+  .premium-hover-card {
+    @apply relative overflow-hidden border border-transparent bg-white/[0.01] transition duration-500 ease-out;
+  }
+
+  .premium-hover-card::before {
+    content: "";
+    @apply pointer-events-none absolute inset-0 opacity-0 transition duration-500;
+    background:
+      linear-gradient(135deg, rgba(212, 175, 55, 0.16), transparent 34%),
+      radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.1), transparent 42%);
+  }
+
+  .premium-hover-card:hover {
+    @apply -translate-y-2 border-gold/25 bg-surface-container/70 shadow-glow;
+  }
+
+  .premium-hover-card:hover::before {
+    @apply opacity-100;
+  }
+
+  .premium-icon-shell {
+    @apply relative flex h-16 w-16 items-center justify-center rounded-full border border-white/10 bg-background/50 transition duration-500;
+  }
+
+  .premium-icon-shell::after {
+    content: "";
+    @apply absolute inset-2 rounded-full border border-gold/0 transition duration-500;
+  }
+
+  .premium-hover-card:hover .premium-icon-shell {
+    @apply border-gold/35 bg-gold/10;
+  }
+
+  .premium-hover-card:hover .premium-icon-shell::after {
+    @apply inset-0 border-gold/25;
+  }
+
+  .process-card {
+    @apply relative overflow-hidden transition duration-500 ease-out hover:-translate-y-2 hover:border-gold/35 hover:bg-background/80 hover:shadow-glow;
+  }
+
+  .process-card::before {
+    content: "";
+    @apply pointer-events-none absolute inset-x-0 top-0 h-px opacity-0 transition duration-500;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.9), transparent);
+  }
+
+  .process-card:hover::before {
+    @apply opacity-100;
+  }
+
+  .process-card .process-number {
+    @apply transition duration-500;
+  }
+
+  .process-card:hover .process-number {
+    -webkit-text-stroke-color: rgba(212, 175, 55, 0.62);
+    transform: translateY(-4px);
+  }
+
+  .contact-link,
+  .interactive-icon,
+  .premium-field {
+    @apply transition duration-300 ease-out;
+  }
+
+  .contact-link:hover {
+    @apply translate-x-1 text-gold;
+  }
+
+  .contact-link:hover span,
+  .interactive-icon:hover {
+    @apply border-gold bg-gold text-background shadow-glow;
+  }
+
+  .interactive-icon:hover {
+    @apply -translate-y-1;
+  }
+
+  .premium-field:hover {
+    @apply border-white/20 bg-surface;
+  }
+
+  .premium-field:focus {
+    @apply bg-background shadow-glow;
+  }
+}
