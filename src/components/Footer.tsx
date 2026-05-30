@@ -56,7 +56,7 @@ export function Footer() {
         </div>
       </div>
       <div className="section-container mt-12 flex flex-wrap justify-between gap-6 border-t border-outline pt-7 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-on-surface-variant">
-        <span>© 2024 Apexzon Agency. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} Apexzon Agency. All rights reserved.</span>
         <span>Designed for Excellence</span>
         <span>ISO 9001 Certified</span>
       </div>
