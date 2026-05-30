@@ -18,7 +18,7 @@ export function ContactSection() {
             Our experts are standing by to elevate your brand.
           </p>
           <div className="my-9 grid gap-4 border-b border-white/10 pb-9">
-            <a className="flex items-center gap-3 no-underline" href="mailto:hello@apexzon.agency">
+            <a className="contact-link flex items-center gap-3 no-underline" href="mailto:hello@apexzon.agency">
               <span className="border border-gold p-1.5 text-gold">
                 <FaEnvelope className="h-5 w-5" aria-hidden="true" />
               </span>
@@ -38,7 +38,7 @@ export function ContactSection() {
                 const Icon = social.icon;
 
                 return (
-                  <a className="flex h-10 w-10 items-center justify-center border border-gold/25 no-underline transition hover:border-gold hover:text-gold" href="#" key={social.label} aria-label={social.label}>
+                  <a className="interactive-icon flex h-10 w-10 items-center justify-center border border-gold/25 no-underline" href="#" key={social.label} aria-label={social.label}>
                     <Icon className="h-4 w-4" aria-hidden="true" />
                   </a>
                 );
@@ -49,15 +49,15 @@ export function ContactSection() {
         <form className="grid gap-5 border-t-4 border-gold bg-surface-container p-6 md:p-12" aria-label="Contact inquiry form">
           <label className="grid gap-2 text-micro uppercase text-primary">
             Name
-            <input className="border border-outline bg-surface-low p-4 text-base normal-case tracking-normal text-white outline-none focus:border-gold/70" type="text" placeholder="Your Full Name" />
+            <input className="premium-field border border-outline bg-surface-low p-4 text-base normal-case tracking-normal text-white outline-none focus:border-gold/70" type="text" placeholder="Your Full Name" />
           </label>
           <label className="grid gap-2 text-micro uppercase text-primary">
             Email
-            <input className="border border-outline bg-surface-low p-4 text-base normal-case tracking-normal text-white outline-none focus:border-gold/70" type="email" placeholder="Corporate Email Address" />
+            <input className="premium-field border border-outline bg-surface-low p-4 text-base normal-case tracking-normal text-white outline-none focus:border-gold/70" type="email" placeholder="Corporate Email Address" />
           </label>
           <label className="grid gap-2 text-micro uppercase text-primary">
             Message
-            <textarea className="min-h-32 resize-y border border-outline bg-surface-low p-4 text-base normal-case tracking-normal text-white outline-none focus:border-gold/70" placeholder="Briefly describe your goals..." />
+            <textarea className="premium-field min-h-32 resize-y border border-outline bg-surface-low p-4 text-base normal-case tracking-normal text-white outline-none focus:border-gold/70" placeholder="Briefly describe your goals..." />
           </label>
           <button className="btn btn-primary" type="submit">
             Send Inquiry

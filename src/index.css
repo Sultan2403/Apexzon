@@ -214,3 +214,115 @@
     transition-duration: 1ms !important;
   }
 }
+
+@layer components {
+  .brand-link {
+    @apply transition duration-300 hover:text-gold;
+    text-shadow: 0 0 0 rgba(212, 175, 55, 0);
+  }
+
+  .brand-link:hover {
+    text-shadow: 0 0 24px rgba(212, 175, 55, 0.28);
+  }
+
+  .nav-link {
+    @apply relative pb-2 transition duration-300 hover:text-white;
+  }
+
+  .nav-link::after {
+    content: "";
+    @apply absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-gold transition duration-300 ease-out;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.is-active::after {
+    @apply scale-x-100;
+  }
+
+  .premium-hover-card {
+    @apply relative overflow-hidden border border-transparent bg-white/[0.01] transition duration-500 ease-out;
+  }
+
+  .premium-hover-card::before {
+    content: "";
+    @apply pointer-events-none absolute inset-0 opacity-0 transition duration-500;
+    background:
+      linear-gradient(135deg, rgba(212, 175, 55, 0.16), transparent 34%),
+      radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.1), transparent 42%);
+  }
+
+  .premium-hover-card:hover {
+    @apply -translate-y-2 border-gold/25 bg-surface-container/70 shadow-glow;
+  }
+
+  .premium-hover-card:hover::before {
+    @apply opacity-100;
+  }
+
+  .premium-icon-shell {
+    @apply relative flex h-16 w-16 items-center justify-center rounded-full border border-white/10 bg-background/50 transition duration-500;
+  }
+
+  .premium-icon-shell::after {
+    content: "";
+    @apply absolute inset-2 rounded-full border border-gold/0 transition duration-500;
+  }
+
+  .premium-hover-card:hover .premium-icon-shell {
+    @apply border-gold/35 bg-gold/10;
+  }
+
+  .premium-hover-card:hover .premium-icon-shell::after {
+    @apply inset-0 border-gold/25;
+  }
+
+  .process-card {
+    @apply relative overflow-hidden transition duration-500 ease-out hover:-translate-y-2 hover:border-gold/35 hover:bg-background/80 hover:shadow-glow;
+  }
+
+  .process-card::before {
+    content: "";
+    @apply pointer-events-none absolute inset-x-0 top-0 h-px opacity-0 transition duration-500;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.9), transparent);
+  }
+
+  .process-card:hover::before {
+    @apply opacity-100;
+  }
+
+  .process-card .process-number {
+    @apply transition duration-500;
+  }
+
+  .process-card:hover .process-number {
+    -webkit-text-stroke-color: rgba(212, 175, 55, 0.62);
+    transform: translateY(-4px);
+  }
+
+  .contact-link,
+  .interactive-icon,
+  .premium-field {
+    @apply transition duration-300 ease-out;
+  }
+
+  .contact-link:hover {
+    @apply translate-x-1 text-gold;
+  }
+
+  .contact-link:hover span,
+  .interactive-icon:hover {
+    @apply border-gold bg-gold text-background shadow-glow;
+  }
+
+  .interactive-icon:hover {
+    @apply -translate-y-1;
+  }
+
+  .premium-field:hover {
+    @apply border-white/20 bg-surface;
+  }
+
+  .premium-field:focus {
+    @apply bg-background shadow-glow;
+  }
+}
